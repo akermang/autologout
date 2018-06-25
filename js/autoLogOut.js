@@ -1,9 +1,11 @@
 const autoLogOutComponent = $("#autoLogOutComponent");
 const time = $("#autoLogOutComponent span");
+const numberSecToLogOut = 5;
+const logOutRedirect = "http://192.116.94.101/ServiceManager/apps/MOAG/moag_parot.html"
 
 function logOut() {
     sessionStorage.clear();
-    window.location.replace("http://192.116.94.101/ServiceManager/apps/MOAG/moag_parot.html");
+    window.location.replace(logOutRedirect);
 }
 
 function cancelLogOut() {
@@ -13,7 +15,7 @@ function cancelLogOut() {
 
 function startLogoutTimer() {
   autoLogOutComponent.show();
-  time.text("5")
+  time.text(numberSecToLogOut);
   timer();
 }
 
@@ -22,7 +24,7 @@ const timer = function () {
   if(curentTime == "stop") return;
   if (curentTime == 0) { 
     // logout function here ****
-      autoLogOutComponent.text("Loged Out");
+      // autoLogOutComponent.text("logged Out");
       logOut(); 
   } else {
     time.text(curentTime -1);
