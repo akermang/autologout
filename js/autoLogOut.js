@@ -35,12 +35,13 @@ const timer = function () {
 
 function idleTimer() {
   var t;
-  //window.onload = resetTimer;
+  window.onload = resetTimer;
   window.onmousemove = resetTimer; // catches mouse movements
   window.onmousedown = resetTimer; // catches mouse movements
   window.onclick = resetTimer;     // catches mouse clicks
   window.onscroll = resetTimer;    // catches scrolling
   window.onkeypress = resetTimer;  //catches keyboard actions
+    window.touchmove = resetTimer;
 
  function resetTimer() {
       clearTimeout(t);
