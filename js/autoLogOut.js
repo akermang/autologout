@@ -25,8 +25,7 @@ const timer = function () {
   if(curentTime == "stop") return;
   if (curentTime == 0) { 
     // logout function here ****
-      autoLogOutComponent.text("logged Out");
-      logOut(); 
+    logOut(); 
   } else {
     time.text(curentTime -1);
     setTimeout(timer,1000);
